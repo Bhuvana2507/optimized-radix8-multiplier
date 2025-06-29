@@ -39,19 +39,22 @@ By integrating **approximate computing techniques** with high-speed adders (CSA,
 
 ## 📁 Project Directory Structure
 
-**optimized-radix8-multiplier/**
-├── *Carry Look Ahead Adder/*
-│ ├── Testbench.v
-│ └── Verilog.v
-├── *Carry Save Adder/*
-│ ├── Testbench.v
-│ └── Verilog.v
-├── *Kogge-Stone Adder/*
-│ ├── Adder_code.v
-│ ├── Testbench.v
-│ └── Verilog.v
-├── *Radix-8 booth multiplier/*
-│ ├── Testbench.v
-│ └── Verilog.v
+```plaintext
+optimized-radix8-multiplier/
+├── Carry Look Ahead Adder/
+│   ├── Testbench.v
+│   └── Verilog.v
+├── Carry Save Adder/
+│   ├── Testbench.v
+│   └── Verilog.v
+├── Kogge-Stone Adder/
+│   ├── Adder_code.v
+│   ├── Testbench.v
+│   └── Verilog.v
+├── Radix-8 booth multiplier/
+│   ├── Testbench.v
+│   └── Verilog.v
 └── README.md
+```
+
 

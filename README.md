@@ -1,5 +1,5 @@
 
-## **Optimization of Delay and Area for Approximate Radix-8 Booth Multiplier**
+# **Optimization of Delay and Area for Approximate Radix-8 Booth Multiplier**
 
 ---
 
@@ -36,3 +36,22 @@ By integrating **approximate computing techniques** with high-speed adders (CSA,
 - 🔬 **Scientific Computations**
 - 📱 **Embedded Systems** and **IoT Devices**
 - 🎮 **Graphics Processing Units (GPUs)**
+
+## 📁 Project Directory Structure
+
+**optimized-radix8-multiplier/**
+├── *Carry Look Ahead Adder/*
+│ ├── Testbench.v
+│ └── Verilog.v
+├── *Carry Save Adder/*
+│ ├── Testbench.v
+│ └── Verilog.v
+├── *Kogge-Stone Adder/*
+│ ├── Adder_code.v
+│ ├── Testbench.v
+│ └── Verilog.v
+├── *Radix-8 booth multiplier/*
+│ ├── Testbench.v
+│ └── Verilog.v
+└── README.md
+

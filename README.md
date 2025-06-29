@@ -57,4 +57,63 @@ optimized-radix8-multiplier/
 └── README.md
 ```
 
+In this project, we implemented and compared three different adder architectures—Carry Save Adder (CSA), Carry Lookahead Adder (CLA), and Kogge-Stone Adder (KSA)—within a Radix-8 Booth Multiplier to analyze their impact on **delay, area, and power consumption**. This was necessary because although Radix-8 Booth encoding reduces the number of partial products (thereby improving performance), the **adder used for summing those partial products plays a critical role in final system efficiency**.
+
+### 🔍 Why the Comparison?
+
+Multipliers are key components in digital systems like image processing, machine learning, and DSP. These applications often demand high-speed computation with limited power and area budgets. The choice of adder directly impacts:
+- **Computation speed (delay)**
+- **Chip area (LUTs or logic gates used)**
+- **Power usage (especially in embedded systems)**
+
+Different applications have different optimization priorities. For instance:
+- A real-time video processor prioritizes **speed**
+- A wearable medical device may prioritize **power efficiency**
+- A mobile SoC might need the **best balance between area and performance**
+
+Thus, comparing these adders helps in choosing the right architecture based on the use case.
+
+---
+
+### 🧠 What Each Adder Offers
+
+- **Carry Save Adder (CSA)**:
+  - Efficient in handling multiple partial products by deferring carry propagation
+  - Reduces intermediate delays
+  - Needs a final fast adder for result computation
+  - Suitable for stages where speed is needed but final accuracy is still manageable
+
+- **Carry Lookahead Adder (CLA)**:
+  - Uses parallel carry generation logic
+  - Offers good delay reduction without increasing area significantly
+  - Best trade-off between speed and area
+  - Ideal for systems that need high performance but have space constraints
+
+- **Kogge-Stone Adder (KSA)**:
+  - Highly parallel prefix computation
+  - Achieves the lowest delay among all three
+  - Uses more logic and routing resources, hence larger area and more power
+  - Excellent for ultra-fast systems like high-frequency processors
+
+---
+
+### 🏆 Which Performed Best and Why?
+
+According to the simulation results:
+- **Kogge-Stone Adder** achieved the **fastest performance** with the **least delay** (≈ 15.17 ns), making it the best choice for high-speed or latency-critical applications like real-time DSP or video processing.
+- **Carry Lookahead Adder** had the **smallest area** (≈ 308 LUTs) and **lowest power consumption** (≈ 31.43 µW), making it best for low-power systems like embedded controllers, wearables, and battery-sensitive devices.
+- **Carry Save Adder** provided **moderate performance**, excelling in multi-operand addition stages. It is well-suited for intermediate summation but requires additional logic for the final result.
+
+---
+
+### 🧩 Conclusion
+
+The comparison shows that no single adder is universally “best.” Instead:
+- **Use KSA** when speed is the top priority and area/power are secondary.
+- **Use CLA** for balanced performance in constrained environments.
+- **Use CSA** where multiple additions are involved and delay must be minimized early in the pipeline.
+
+This design-centric comparison helps in tailoring multiplier architectures based on application-specific requirements in modern digital systems.
+
+
 

@@ -117,3 +117,64 @@ This design-centric comparison helps in tailoring multiplier architectures based
 
 
 
+## 🛠️ How to Run the Project
+
+### 🔷 Using Vivado (Xilinx)
+
+1. **Create Project**
+   - Open Vivado → *Create New Project* → Select *RTL Project*
+   - Add source files (`Verilog.v`, `Testbench.v`) and define top module
+
+2. **Set Target Device**
+   - Choose the appropriate FPGA part (e.g., Artix-7 or Spartan-6)
+
+3. **Run Simulation**
+   - Go to *Flow Navigator* → *Simulation* → *Run Behavioral Simulation*
+   - Verify waveforms and output values
+
+4. **(Optional) Synthesis & Bitstream**
+   - Run *Synthesis* and *Implementation*
+   - Generate bitstream to deploy on FPGA
+
+---
+
+### 🧪 Using Cadence Tools (Genus or Virtuoso)
+
+#### ▶️ Genus (for RTL Synthesis)
+
+1. **Start Genus**
+   ```bash
+   genus
+   ```
+
+2. **Create and Run a Script**
+   Create a `script.tcl`:
+   ```tcl
+   read_hdl Verilog.v
+   elaborate booth_multiplier
+   check_design
+   synth_design
+   write -f verilog -hier -output synthesized.v
+   ```
+
+3. **Run Script**
+   ```bash
+   genus -f script.tcl
+   ```
+
+---
+
+#### 🎨 Virtuoso (for Schematic/Layout)
+
+1. **Open Virtuoso and Library Manager**
+2. Create a new cell and import/verilog your design
+3. Set up simulation using **ADE L/XL**
+4. Run *transient* or *functional* simulation and observe output
+
+---
+
+📌 *Ensure correct tool versions are loaded in your terminal using `source` commands based on your lab environment or license setup.*
+
+
+
+
